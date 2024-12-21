@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Semester Fees</title> <!-- Updated title -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin: 20px auto;
+            position: relative;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+        }
+        .header img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 24px;
+        }
+        .college-name {
+            font-size: 20px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section with Image -->
+    <div class="header">
+        <img src="https://img.icons8.com/ios/452/computer.png" alt="Computer Icon">
+        <h1>Semester Fees</h1> <!-- Updated title in the header -->
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <form id="feesForm">
+            <input type="text" id="name" placeholder="Enter Name" required><br>
+            <input type="text" id="rollNo" placeholder="Enter Roll No" required><br>
+            <input type="text" id="college" value="SRI RAMAKRISHNA ENGINEERING COLLEGE" disabled><br>
+            <input type="text" id="fees" value="2800" disabled><br>
+            <button type="button" onclick="submitForm()">Proceed to Payment</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to handle form submission
+        function submitForm() {
+            // Get values from form inputs
+            const name = document.getElementById('name').value;
+            const rollNo = document.getElementById('rollNo').value;
+            const fees = document.getElementById('fees').value;
+
+            // Check if all fields are filled
+            if (name && rollNo) {
+                // Display an alert showing the details before proceeding to payment
+                alert("Form Submitted Successfully!\n" +
+                      "Name: " + name + "\n" +
+                      "Roll No: " + rollNo + "\n" +
+                      "Fees to be Paid: ₹" + fees + "\n" +
+                      "You will now proceed to the payment page.");
+                
+                // Redirect to a payment page (for the purpose of this example, it's just a placeholder URL)
+                window.location.href = "https://www.examplepaymentpage.com";
+            } else {
+                // Show an alert if any field is missing
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+
+</body>
+</html>
